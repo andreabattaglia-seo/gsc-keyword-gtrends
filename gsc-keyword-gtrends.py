@@ -18,17 +18,20 @@ st.markdown("""
 st.markdown("""
 <p class="big-font">Top GSC Keyword in Trend</p>
 <b>Istruzioni: </b></ br><ol>
-<li>Export Performance data (impressions, CTR, positon) in Google Search Console. Upload Queries.csv from the zip file.</li>
-<li>Max number of queries to run is capped to 200 to prevent timeout of the app or being blocked by Google</li>
-<li>Tutorial coming soon!</li>
+<li>1. Da GSC esporta in CSV i dati di "Risultati di Ricerca". Upload Queries.csv from the zip file.</li>
+<li>2. Configura il tool per la tua analisi.</li>
+<li>3. Dal file ZIP upload il file Queries.csv.</li>
+<li>4. Attendi che il tool analizzi i dati!</li>
 </ol>
+<p>Forked dal lavoro di: [Greg Bernhardt](https://twitter.com/GregBernhardt4) </p>
 """, unsafe_allow_html=True)
 
 # sortby = st.selectbox('Sort Keywords By',('Clicks', 'Impressions','CTR','Position'))
-sortby = st.selectbox('Sort Keywords By',('Clic', 'Impressioni','CTR','Posizione'))
-cutoff = st.number_input('Number of queries', min_value=1, max_value=500, value=100)
-pause = st.number_input('Pause between calls', min_value=1, max_value=5, value=3)
-timeframe = st.selectbox('Timeframe',('now 1-d', 'today 1-m', 'today 3-m', 'today 12-m'))
+sortby = st.selectbox('Ordina le keyword per',('Clic', 'Impressioni','CTR','Posizione'))
+cutoff = st.number_input('Numero di query', min_value=1, max_value=500, value=100)
+pause = st.number_input('Pausa tra le chiamate', min_value=1, max_value=5, value=3)
+timeframe = st.selectbox('Periodo',('now 1-d', 'now 7-d', 'today 1-m', 'today 3-m', 'today 12-m'))
+gprop = st.selectbox('Cerchi su',('web', 'news'))
 # geo = st.selectbox('Geo',('World', 'IT'))
 
 # if geo == 'World':
@@ -37,7 +40,7 @@ geo = 'IT'
 get_gsc_file = st.file_uploader("Upload GSC CSV File",type=['csv'])  
 
 if get_gsc_file is not None:
-    st.write("Data upload success, processing... patience :sunglasses:")
+    st.write("Dati uploadati con successo, analisi in corso... abbi pazienza :sunglasses:")
     
     df = pd.read_csv(get_gsc_file, encoding='utf-8')
     df.sort_values(by=[sortby], ascending=False, inplace=True)
@@ -58,7 +61,7 @@ if get_gsc_file is not None:
       keyword = row['Query più frequenti']
       pytrends = TrendReq(hl='it', tz=360)
       kw_list = [keyword]
-      pytrends.build_payload(kw_list, cat=0, timeframe=timeframe, geo=geo, gprop='')
+      pytrends.build_payload(kw_list, cat=0, timeframe=timeframe, geo=geo, gprop=gprop)
       df2 = pytrends.interest_over_time()
       keywords.append(keyword)
       try:
