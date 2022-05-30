@@ -16,7 +16,7 @@ st.markdown("""
 
 
 st.markdown("""
-<p class="big-font">Top GSC Keyword in Trend</p>
+<p class="big-font">Top GSC Keyword in Trend in Italia</p>
 <b>Istruzioni: </b></ br><ol>
 <li>Da GSC esporta in CSV i dati di "Risultati di Ricerca". Upload Queries.csv from the zip file.</li>
 <li>Configura il tool per la tua analisi.</li>
@@ -36,6 +36,11 @@ gprop = st.selectbox('Cerchi su',('web', 'news'))
 
 # if geo == 'World':
 geo = 'IT'
+
+if gprop == 'web':
+    gprop = ''
+else:
+    gprop = 'news'
 
 get_gsc_file = st.file_uploader("Upload GSC CSV File",type=['csv'])  
 
