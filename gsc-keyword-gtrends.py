@@ -18,10 +18,10 @@ st.markdown("""
 st.markdown("""
 <p class="big-font">Top GSC Keyword in Trend</p>
 <b>Istruzioni: </b></ br><ol>
-<li>1. Da GSC esporta in CSV i dati di "Risultati di Ricerca". Upload Queries.csv from the zip file.</li>
-<li>2. Configura il tool per la tua analisi.</li>
-<li>3. Dal file ZIP upload il file Queries.csv.</li>
-<li>4. Attendi che il tool analizzi i dati!</li>
+<li>Da GSC esporta in CSV i dati di "Risultati di Ricerca". Upload Queries.csv from the zip file.</li>
+<li>Configura il tool per la tua analisi.</li>
+<li>Dal file ZIP upload il file Queries.csv.</li>
+<li>Attendi che il tool analizzi i dati!</li>
 </ol>
 <p>Forked dal lavoro di: [Greg Bernhardt](https://twitter.com/GregBernhardt4) </p>
 """, unsafe_allow_html=True)
