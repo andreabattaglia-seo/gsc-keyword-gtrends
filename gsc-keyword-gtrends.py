@@ -16,8 +16,8 @@ st.markdown("""
 
 
 st.markdown("""
-<p class="big-font">Google Trends For Top GSC Keywords</p>
-<b>Directions: </b></ br><ol>
+<p class="big-font">Top GSC Keyword in Trend</p>
+<b>Istruzioni: </b></ br><ol>
 <li>Export Performance data (impressions, CTR, positon) in Google Search Console. Upload Queries.csv from the zip file.</li>
 <li>Max number of queries to run is capped to 200 to prevent timeout of the app or being blocked by Google</li>
 <li>Tutorial coming soon!</li>
@@ -26,9 +26,9 @@ st.markdown("""
 
 # sortby = st.selectbox('Sort Keywords By',('Clicks', 'Impressions','CTR','Position'))
 sortby = st.selectbox('Sort Keywords By',('Clic', 'Impressioni','CTR','Posizione'))
-cutoff = st.number_input('Number of queries', min_value=1, max_value=200, value=10)
-pause = st.number_input('Pause between calls', min_value=1, max_value=5, value=2)
-timeframe = st.selectbox('Timeframe',('today 1-m', 'today 3-m', 'today 12-m'))
+cutoff = st.number_input('Number of queries', min_value=1, max_value=500, value=100)
+pause = st.number_input('Pause between calls', min_value=1, max_value=5, value=3)
+timeframe = st.selectbox('Timeframe',('now 1-d', 'today 1-m', 'today 3-m', 'today 12-m'))
 # geo = st.selectbox('Geo',('World', 'IT'))
 
 # if geo == 'World':
