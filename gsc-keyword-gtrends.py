@@ -54,7 +54,7 @@ if get_gsc_file is not None:
 
     for index, row in df.iterrows():
       # keyword = row['Top queries']
-    keyword = row['Query più frequenti']
+      keyword = row['Query più frequenti']
       pytrends = TrendReq(hl='it', tz=360)
       kw_list = [keyword]
       pytrends.build_payload(kw_list, cat=0, timeframe=timeframe, geo=geo, gprop='')
