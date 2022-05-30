@@ -23,7 +23,7 @@ st.markdown("""
 <li>Dal file ZIP upload il file Queries.csv.</li>
 <li>Attendi che il tool analizzi i dati!</li>
 </ol>
-<p>Forked dal lavoro di: [Greg Bernhardt](https://twitter.com/GregBernhardt4) </p>
+<p>Max 500 query analizzabili. Per evitare il timeout, seleziona "Pausa tra le chiamate" a 5</p>
 """, unsafe_allow_html=True)
 
 # sortby = st.selectbox('Sort Keywords By',('Clicks', 'Impressions','CTR','Position'))
@@ -121,4 +121,4 @@ if get_gsc_file is not None:
     st.markdown(get_csv_download_link(df3.data,"gsc-keyword-trends.csv"), unsafe_allow_html=True)
     st.dataframe(df3)
 
-st.write('Author: [Greg Bernhardt](https://twitter.com/GregBernhardt4) | Friends: [importSEM](https://www.importsem.com) and [Physics Forums](https://www.physicsforums.com)')
+st.write('Forked dal lavoro di: [Greg Bernhardt](https://twitter.com/GregBernhardt4)')
