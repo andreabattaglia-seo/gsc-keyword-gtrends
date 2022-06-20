@@ -39,8 +39,8 @@ geo = 'IT'
 
 if gprop == 'web':
     gprop = ''
-# else:
-#   gprop = 'news'
+else:
+   gprop = 'news'
 
 get_gsc_file = st.file_uploader("Upload GSC CSV File",type=['csv'])  
 
