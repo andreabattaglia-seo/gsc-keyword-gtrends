@@ -66,7 +66,7 @@ if get_gsc_file is not None:
       keyword = row['Query']
       pytrends = TrendReq(hl='it', tz=360)
       kw_list = [keyword]
-      pytrends.build_payload(kw_list, cat=0, timeframe=timeframe, geo=IT, gprop=gprop)
+      pytrends.build_payload(kw_list, cat=0, timeframe=timeframe, geo=geo, gprop=gprop)
       df2 = pytrends.interest_over_time()
       keywords.append(keyword)
       try:
