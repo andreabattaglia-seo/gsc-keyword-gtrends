@@ -59,7 +59,7 @@ if get_gsc_file is not None:
     up =0
     down =0
     flat =0
-    na = 0
+    na =0
 
     for index, row in df.iterrows():
       # keyword = row['Top queries']
