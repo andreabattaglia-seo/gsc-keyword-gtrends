@@ -23,12 +23,12 @@ st.markdown("""
 <li>Dal file ZIP upload il file Queries.csv.</li>
 <li>Attendi che il tool analizzi i dati!</li>
 </ol>
-<p>Max 500 query analizzabili. Per evitare il timeout, seleziona "Pausa tra le chiamate" a 5</p>
+<p>Max 1000 query analizzabili. Per evitare il timeout, seleziona "Pausa tra le chiamate" a 5</p>
 """, unsafe_allow_html=True)
 
 # sortby = st.selectbox('Sort Keywords By',('Clicks', 'Impressions','CTR','Position'))
 sortby = st.selectbox('Ordina le keyword per',('Clic', 'Impressioni','CTR','Posizione'))
-cutoff = st.number_input('Numero di query', min_value=1, max_value=500, value=100)
+cutoff = st.number_input('Numero di query', min_value=1, max_value=1000, value=100)
 pause = st.number_input('Pausa tra le chiamate', min_value=1, max_value=5, value=3)
 timeframe = st.selectbox('Periodo',('now 1-d', 'now 7-d', 'today 1-m', 'today 3-m', 'today 12-m'))
 gprop = st.selectbox('Cerchi su',('web', 'news'))
