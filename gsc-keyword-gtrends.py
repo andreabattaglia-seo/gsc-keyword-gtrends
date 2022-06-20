@@ -18,7 +18,7 @@ st.markdown("""
 st.markdown("""
 <p class="big-font">Top GSC Keyword in Trend in Italia</p>
 <b>Istruzioni: </b></ br><ol>
-<li>Da GSC esporta in CSV i dati di "Risultati di Ricerca". Upload Queries.csv from the zip file.</li>
+<li>Da GSC esporta in CSV i dati di "Risultati di Ricerca".</li>
 <li>Configura il tool per la tua analisi.</li>
 <li>Dal file ZIP upload il file Queries.csv.</li>
 <li>Attendi che il tool analizzi i dati!</li>
